@@ -1,23 +1,22 @@
 
 <template>
   <h1>{{ title }}</h1><br>
-  <buttons title = "Normal Counter" :coun="counts" @increase-by = "increaseCount">
-    <div>
-      <p>Counter</p>
-    </div>
-  </buttons>
+  <h2>{{ subject }}</h2><br>
+  <button @click = "count++">{{ count }} </button>
 </template>
 
-<script setup>
+<!-- Option API -->
+<script>
+  export default{
+    data(){
+      return{
+        title : 'Programing',
+        subject : 'Vie JS',
+        count : 9
+      }
+    }
 
-  import {provide,ref} from 'vue';
-  import buttons from './components/buttons.vue'
-  let title = ref("Vue JS Program"); 
-  provide('message','How are you')
-  let counts = ref(0);  
-  const increaseCount =  (n) =>{
-    counts.value += n
-  } 
+  }
 </script>
 
 
