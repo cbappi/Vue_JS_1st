@@ -5,17 +5,13 @@
   <button @click = "count++">{{ count }} </button>
 </template>
 
-<!-- Composition API -->
-<script>
+<!-- Script Set up -->
+<script setup>
   import {ref} from 'vue';
-  export default{
-    setup(){
+
       let count = ref(10);
-      const title = ref('Programing');
-      const subject = ref('Vie JS');
-      return{ title,subject,count}
-    }
-  }
+      const title = ref('Programing journy');
+      const subject = ref('Vie JS Tutorial'); 
 </script>
 
 
