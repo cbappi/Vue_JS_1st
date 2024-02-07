@@ -1,5 +1,6 @@
 <template>
     <h1>{{title }}</h1>
+    <p>{{ message }}</p>
     <div class ="count">
     
         <button  @click = "$emit('increaseBy',1)">+</button>
@@ -11,8 +12,9 @@
   
   <script setup>
   
-    import {ref} from 'vue';
+    import {inject,ref} from 'vue';
     const props = defineProps(['title', 'coun'])
+    const message = inject('message')
   
   </script>
   

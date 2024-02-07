@@ -10,9 +10,10 @@
 
 <script setup>
 
-  import {ref} from 'vue';
+  import {provide,ref} from 'vue';
   import buttons from './components/buttons.vue'
   let title = ref("Vue JS Program"); 
+  provide('message','How are you')
   let counts = ref(0);  
   const increaseCount =  (n) =>{
     counts.value += n
