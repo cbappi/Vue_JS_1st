@@ -17,13 +17,13 @@ import TheWelcome from './components/TheWelcome.vue'
     <br>
     <br>
     <span><button @click="increment(2)">+</button></span><br>
-    {{ measure }}<br>
+    {{ measure }} // {{ sayNumber }} <br>
     <span><button @click="decrement(1)">-</button></span>
   
   </template>
   
   <script setup>
-        import {reactive, ref, computed} from 'vue';
+        import {reactive, ref, computed, watch} from 'vue';
         const staticEtring = "This value has no reactivity"
         const courseName = ref("Go on Vue JS");
         const mentor = ref("Muhammed Ibrahim");
@@ -53,7 +53,24 @@ import TheWelcome from './components/TheWelcome.vue'
      const fulitName = computed(()=>
       {return info.itFirstName+ ' ' +info.itLastName;}
      )
-    
+  
+     const sayNumber = computed(()=>
+    {
+      if( measure.value%2==0){
+        return "Even number"
+      }else{ return "Odd number"}
+    }
+   )
+  
+    //WATCH METHOD 
+  
+    watch(()=>measure.value, (newValue, oldValue)=>{
+      console.log(newValue);
+      console.log(oldValue);
+      if(newValue>50){
+        alert("Stock nearly short")
+      }
+    })
      
    //FUNCTION TYPE
         // function increment(amount){
