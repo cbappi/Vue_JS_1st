@@ -2,6 +2,12 @@
 <template>
   <h1>{{ title }}</h1><br>
   <h2>{{ subject }}</h2><br>
+  <h2>{{ obj.name }}</h2><br>
+  <!-- Two way data binding -->
+  <input type = "tex" v-model="obj.name"/><br>
+  <br>
+  <br>
+  <input type = "number" v-model="count"/><br>
   <h2>{{ obj.description }}</h2><br>
   <button @click = "count++">{{ count }} </button>
 </template>
