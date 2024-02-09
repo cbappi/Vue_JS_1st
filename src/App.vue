@@ -1,33 +1,22 @@
 
 <template>
 
-  <h1 v-if = "showBtn">{{obj.title}}</h1>
+  <h1>{{obj.title}}</h1><br>
 
- <div>
-    <ul>
-      <li v-for="(todo,index) in todos" :key="index">
-        {{index+1 }}/{{todo.work }} /{{todo.class }}
-      </li>
-    </ul>
+<div>
+  <img v-bind:src="imgUrl"/>
 </div>
  
 </template>
 
-
 <script setup>
 
   import {ref, reactive} from 'vue';  
+   let imgUrl = ref("https://picsum.photos/200/300")
  
   let obj = reactive({
-        title: "Vue JS For V-For",  
+        title: "Vue JS For V-Bind",  
       })
-
-  let todos = ref([
-    {id:1, work:"work one", class: "one"},
-    {id:2, work:"work two", class: "two"},
-    {id:3, work:"work three", class: "three"},
-  ]) 
-  
 </script>
 
 
