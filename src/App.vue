@@ -14,7 +14,7 @@
 
 <!-- Script Set up -->
 <script setup>
-  import {ref, reactive, computed} from 'vue';
+  import {ref, reactive, computed, watch} from 'vue';
 
       let count = ref(10);
 
@@ -48,6 +48,13 @@
           }
         }
       )
+    //Here count.value is resource
+      watch(()=>count.value, (newValue, oldValue)=>{
+        if(newValue>17){
+          alert("No need to more")
+        }
+
+      })
 
 
 
