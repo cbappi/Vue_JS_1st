@@ -2,27 +2,34 @@
 <template>
 
   <h1 v-if = "showBtn">{{obj.title}}</h1>
-  <h1 v-else-if = "!showBtn">{{showBtn}}</h1>
-  <h1 v-else = "showBtn">Nothing</h1>
-  <br/>
-  <button @click = "showBtn = !showBtn">Show/Hide</button>
-  
+
+ <div>
+    <ul>
+      <li v-for="(todo,index) in todos" :key="index">
+        {{index+1 }}/{{todo.work }} /{{todo.class }}
+      </li>
+    </ul>
+</div>
+ 
 </template>
 
 
 <script setup>
 
   import {ref, reactive} from 'vue';  
-  let showBtn = ref(false);
-
-  
+ 
   let obj = reactive({
-        title: "Vue JS Function - V-if - V-else-if",
-        class: "Seven"
-     
+        title: "Vue JS For V-For",  
       })
 
-
+  let todos = ref([
+    {id:1, work:"work one", class: "one"},
+    {id:2, work:"work two", class: "two"},
+    {id:3, work:"work three", class: "three"},
+  ]) 
+  
 </script>
+
+
 
 
