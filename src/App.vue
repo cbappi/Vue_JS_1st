@@ -2,6 +2,8 @@
 <template>
   <h1>{{ obj.title }}</h1>
   <br>
+  <h1 @click = "changeClass">{{ obj.class }}</h1>
+  <br>
   <button @click = "increment">+</button>
   <br>
   <h2>{{ count }}</h2>
@@ -22,13 +24,19 @@
         description: "Now Placing Object Property"
       })
 
-      function increment(){
+      const increment = () =>{
         count.value++;
       }
 
-      function decrement(amount){
+      const decrement = amount => {
         count.value -= amount;
       }
+
+      const changeClass = () => {
+        obj.class = "Ten";
+      }
+
+
 </script>
 
 
