@@ -1,23 +1,44 @@
 
 <template>
 
-  <h1>{{obj.title}}</h1><br>
+  <h1>{{obj.title1}}</h1><br>
+  <h1>{{obj.title2}}</h1><br>
 
-<div>
-  <img v-bind:src="imgUrl"/>
+  
+<div :class = "isActive ? 'color-one':'color-two' " >
+  <h1>Ok</h1>
 </div>
+
  
 </template>
 
 <script setup>
 
   import {ref, reactive} from 'vue';  
-   let imgUrl = ref("https://picsum.photos/200/300")
+
+
+   let isActive = ref(true);
+   
  
   let obj = reactive({
-        title: "Vue JS For V-Bind",  
+        title1: "Section-13: Class and Style Binding",  
+        title2: "Binding HTML Classes",  
+
       })
 </script>
+
+<style>
+.color-one{
+  width:100px;
+  height:100px;
+  background-color:aqua ;
+}
+.color-two{
+  width:100px;
+  height:100px;
+  background-color:brown;
+}
+</style>
 
 
 
