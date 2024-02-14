@@ -14,6 +14,9 @@
           <router-link :to = "{name:'single-service', params:{id:service.id}}">
           {{ service.subject }}</router-link></li>
     </ul>
+   <br>
+    <h1>Pinia Getters</h1><br>
+    <p>{{ serviceStore.ourServices }}</p>
 
 
 </template>

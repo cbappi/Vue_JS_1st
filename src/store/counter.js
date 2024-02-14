@@ -7,6 +7,10 @@ export const useCounterStore = defineStore(
             title:'Vue JS Master Class'
         }),
 
+        getters:{
+            ppb:(state)=>state.count*3,
+        },
+
         actions:{
                 increment(){
                 this.count++;

@@ -11,6 +11,14 @@ export const useServiceStore = defineStore(
             {id:4, subject:"Seb Development"},
             {id:5, subject:"Dev Ops"}
         ]
-        })
+        }),
+
+        getters:{
+            ourServices:(state)=>{
+                return state.services[0].subject + ' ' + state.services[1].subject
+            }
+        }
+
+
     }
 )
