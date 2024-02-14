@@ -1,11 +1,11 @@
 <template>
 
     <h1>{{counterStore.title}}</h1><br>
-    <button @click = "increment">+</button>
+    <button @click = "counterStore.increment">+</button>
     <br>
     <h2>{{ counterStore.count }}</h2>
     <br>
-    <button @click = "decrement">-</button>
+    <button @click = "counterStore.decrement">-</button>
 
     <h1>Our Service</h1><br>
 
@@ -25,13 +25,6 @@
 
     const counterStore = useCounterStore();
     const serviceStore = useServiceStore();
-   
-    function increment(){
-      counterStore.count++;
-      }
-    function decrement(){
-      counterStore.count--;
-      }  
     
   </script>
   

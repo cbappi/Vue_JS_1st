@@ -5,6 +5,15 @@ export const useCounterStore = defineStore(
         state:()=>({
             count:10,
             title:'Vue JS Master Class'
-        })
+        }),
+
+        actions:{
+                increment(){
+                this.count++;
+                },
+                decrement(){
+                    this.count--;
+                    }
+        }
     }
 )
